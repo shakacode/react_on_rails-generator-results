@@ -15,8 +15,3 @@
 /log/*
 !/log/.keep
 /tmp
-**/node_modules/**
-**/javascripts/generated/**
-**/npm-debug.log.*
-tester_app/bin/**
-tester_app/config/secrets.yml
