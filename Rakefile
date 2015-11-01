@@ -1,5 +1,5 @@
 desc "generate basic app"
-task :basic do
+task :basic, [:version] do |_task, args|
   sh %( git checkout master )
   sh %( git branch -D basic )
   sh %( git checkout -b basic )
@@ -8,11 +8,11 @@ task :basic do
   sh %( cd tester_app && bundle install )
   sh %( cd tester_app/client && npm install )
   sh %( git add . )
-  sh %( git commit -m "Basic App Generated" )
+  sh %( git commit -m "Basic App Generated Version #{args[:version]}" )
 end
 
 desc "generate basic-server-rendering app"
-task :basic_server_rendering do
+task :basic_server_rendering, [:version] do |_task, args|
   sh %( git checkout master )
   sh %( git branch -D basic-server-rendering )
   sh %( git checkout -b basic-server-rendering )
@@ -21,11 +21,11 @@ task :basic_server_rendering do
   sh %( cd tester_app && bundle install )
   sh %( cd tester_app/client && npm install )
   sh %( git add . )
-  sh %( git commit -m "Basic App with Server Rendering Generated" )
+  sh %( git commit -m "Basic App with Server Rendering Generated #{args[:version]}" )
 end
 
 desc "generate redux app"
-task :redux do
+task :redux, [:version] do |_task, args|
   sh %( git checkout master )
   sh %( git branch -D redux )
   sh %( git checkout -b redux )
@@ -34,11 +34,11 @@ task :redux do
   sh %( cd tester_app && bundle install )
   sh %( cd tester_app/client && npm install )
   sh %( git add . )
-  sh %( git commit -m "Redux App Generated" )
+  sh %( git commit -m "Redux App Generated #{args[:version]}" )
 end
 
 desc "generate redux-server-rendering app"
-task :redux_server_rendering do
+task :redux_server_rendering, [:version] do |_task, args|
   sh %( git checkout master )
   sh %( git branch -D redux-server-rendering )
   sh %( git checkout -b redux-server-rendering )
@@ -47,7 +47,7 @@ task :redux_server_rendering do
   sh %( cd tester_app && bundle install )
   sh %( cd tester_app/client && npm install )
   sh %( git add . )
-  sh %( git commit -m "Redux with Server Rendering App Generated" )
+  sh %( git commit -m "Redux with Server Rendering App Generated #{args[:version]}" )
 end
 
 desc "force push all apps"
@@ -63,8 +63,11 @@ task :force_push do
 end
 
 desc "builds all apps"
-task :all do
-  %i(basic basic_server_rendering redux redux_server_rendering).each do |rake_task|
-    Rake::Task[rake_task].invoke
+task :all, [:version] do |_task, args|
+  %i(basic
+     basic_server_rendering
+     redux
+     redux_server_rendering).each do |rake_task|
+    Rake::Task[rake_task].invoke(args[:version])
   end
 end
