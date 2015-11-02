@@ -1,8 +1,7 @@
 desc "generate basic app"
 task :basic, [:version] do |_task, args|
   sh %( git checkout master )
-  sh %( git branch -D basic )
-  sh %( git checkout -b basic )
+  sh %( git checkout -b basic-#{args[:version]} )
   sh %( cd tester_app && bundle install )
   sh %( cd tester_app && rails generate react_on_rails:install )
   sh %( cd tester_app && bundle install )
@@ -14,8 +13,7 @@ end
 desc "generate basic-server-rendering app"
 task :basic_server_rendering, [:version] do |_task, args|
   sh %( git checkout master )
-  sh %( git branch -D basic-server-rendering )
-  sh %( git checkout -b basic-server-rendering )
+  sh %( git checkout -b basic-server-rendering-#{args[:version]} )
   sh %( cd tester_app && bundle install )
   sh %( cd tester_app && rails generate react_on_rails:install --server-rendering )
   sh %( cd tester_app && bundle install )
@@ -27,8 +25,7 @@ end
 desc "generate redux app"
 task :redux, [:version] do |_task, args|
   sh %( git checkout master )
-  sh %( git branch -D redux )
-  sh %( git checkout -b redux )
+  sh %( git checkout -b redux-#{args[:version]} )
   sh %( cd tester_app && bundle install )
   sh %( cd tester_app && rails generate react_on_rails:install --redux )
   sh %( cd tester_app && bundle install )
@@ -40,8 +37,7 @@ end
 desc "generate redux-server-rendering app"
 task :redux_server_rendering, [:version] do |_task, args|
   sh %( git checkout master )
-  sh %( git branch -D redux-server-rendering )
-  sh %( git checkout -b redux-server-rendering )
+  sh %( git checkout -b redux-server-rendering-#{args[:version]} )
   sh %( cd tester_app && bundle install )
   sh %( cd tester_app && rails generate react_on_rails:install --redux --server-rendering )
   sh %( cd tester_app && bundle install )
