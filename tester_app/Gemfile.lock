@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/shakacode/react_on_rails.git
-  revision: 2c0d6c5baf5796e11dc49e1c2ea906ebc3f2a567
+  revision: c20dfccf5ea31b1346a289c5b9f732d991e106e9
   branch: add-generators
   specs:
     react_on_rails (1.0.0.pre)

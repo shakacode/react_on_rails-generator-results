@@ -1,69 +1,46 @@
-desc "generate basic app"
-task :basic, [:version] do |_task, args|
-  sh %( git checkout master )
-  sh %( git checkout -b basic-#{args[:version]} )
-  sh %( cd tester_app && bundle install )
-  sh %( cd tester_app && rails generate react_on_rails:install )
-  sh %( cd tester_app && bundle install )
-  sh %( cd tester_app/client && npm install )
-  sh %( git add . )
-  sh %( git commit -m "Basic App Generated Version #{args[:version]}" )
+# Runs react_on_rails generators on master with varying options and puts each result in its own branch.
+# You must pass in a version number so that the branches will be unique. For example:
+#   rake all[10] will generate all results with a "-10" suffix on the branches.
+
+RESULT_TYPES = %w(basic basic-server-rendering redux redux-server-rendering)
+
+# Define tasks to generate each result type app
+RESULT_TYPES.each do |result_type|
+  desc "generate #{result_type} app"
+  task result_type, [:version] do |_task, args|
+    sh %( git checkout master )
+    sh %( git checkout -b #{result_type}-#{args[:version]} )
+    sh %( cd tester_app && bundle install )
+    sh %( cd tester_app && rails generate react_on_rails:install )
+    sh %( cd tester_app && bundle install )
+    sh %( cd tester_app/client && npm install )
+    sh %( git add . )
+    sh %( git commit -m "#{result_type.capitalize} App Generated v#{args[:version]}" )
+  end
 end
 
-desc "generate basic-server-rendering app"
-task :basic_server_rendering, [:version] do |_task, args|
-  sh %( git checkout master )
-  sh %( git checkout -b basic-server-rendering-#{args[:version]} )
-  sh %( cd tester_app && bundle install )
-  sh %( cd tester_app && rails generate react_on_rails:install --server-rendering )
-  sh %( cd tester_app && bundle install )
-  sh %( cd tester_app/client && npm install )
-  sh %( git add . )
-  sh %( git commit -m "Basic App with Server Rendering Generated #{args[:version]}" )
-end
-
-desc "generate redux app"
-task :redux, [:version] do |_task, args|
-  sh %( git checkout master )
-  sh %( git checkout -b redux-#{args[:version]} )
-  sh %( cd tester_app && bundle install )
-  sh %( cd tester_app && rails generate react_on_rails:install --redux )
-  sh %( cd tester_app && bundle install )
-  sh %( cd tester_app/client && npm install )
-  sh %( git add . )
-  sh %( git commit -m "Redux App Generated #{args[:version]}" )
-end
-
-desc "generate redux-server-rendering app"
-task :redux_server_rendering, [:version] do |_task, args|
-  sh %( git checkout master )
-  sh %( git checkout -b redux-server-rendering-#{args[:version]} )
-  sh %( cd tester_app && bundle install )
-  sh %( cd tester_app && rails generate react_on_rails:install --redux --server-rendering )
-  sh %( cd tester_app && bundle install )
-  sh %( cd tester_app/client && npm install )
-  sh %( git add . )
-  sh %( git commit -m "Redux with Server Rendering App Generated #{args[:version]}" )
-end
-
-desc "force push all apps"
-task :force_push do
-  sh %( git checkout basic )
-  sh %( git push origin basic -fu )
-  sh %( git checkout basic-server-rendering )
-  sh %( git push origin basic-server-rendering -fu )
-  sh %( git checkout redux )
-  sh %( git push origin redux -fu )
-  sh %( git checkout redux-server-rendering )
-  sh %( git push origin redux-server-rendering -fu )
-end
-
-desc "builds all apps"
+desc "generates all results and places them in their own branch"
 task :all, [:version] do |_task, args|
-  %i(basic
-     basic_server_rendering
-     redux
-     redux_server_rendering).each do |rake_task|
-    Rake::Task[rake_task].invoke(args[:version])
+  RESULT_TYPES.each do |result_type|
+    Rake::Task[result_type].invoke(args[:version])
+  end
+end
+
+desc "push all branches"
+task "push_all", [:version] do |_task, args|
+  RESULT_TYPES.each do |result_type|
+    branch_name = "#{result_type}-#{args[:version]}"
+    sh %( git checkout #{branch_name} )
+    sh %( git push origin #{branch_name} -u )
+  end
+end
+
+# Requires `hub` command-line tool
+desc "creates pull requests"
+task "pull_requests" do |_task, args|
+  RESULT_TYPES.each do |result_type|
+    branch_name = "#{result_type}-#{args[:version]}"
+    sh %( git checkout #{branch_name} )
+    sh %( hub pull-request #{branch_name} )
   end
 end
