@@ -37,7 +37,7 @@ end
 
 # Requires `hub` command-line tool
 desc "creates pull requests"
-task "pull_requests" do |_task, args|
+task "pull_requests", [:version] do |_task, args|
   RESULT_TYPES.each do |result_type|
     branch_name = "#{result_type}-#{args[:version]}"
     sh %( git checkout #{branch_name} )
