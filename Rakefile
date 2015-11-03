@@ -3,6 +3,7 @@
 #   rake all[10] will generate all results with a "-10" suffix on the branches.
 
 RESULT_TYPES = %w(basic basic-server-rendering redux redux-server-rendering)
+GENERATOR_OPTIONS = %w(redux server-rendering)
 
 # Define tasks to generate each result type app
 RESULT_TYPES.each do |result_type|
@@ -11,7 +12,13 @@ RESULT_TYPES.each do |result_type|
     sh %( git checkout master )
     sh %( git checkout -b #{result_type}-#{args[:version]} )
     sh %( cd tester_app && bundle install )
-    sh %( cd tester_app && rails generate react_on_rails:install )
+
+    generator_options = ""
+    result_type.split(/-/, 2).each do |name_part|
+      generator_options += " --#{name_part}" if GENERATOR_OPTIONS.include?(name_part)
+    end
+
+    sh %( cd tester_app && rails generate react_on_rails:install#{generator_options} )
     sh %( cd tester_app && bundle install )
     sh %( cd tester_app/client && npm install )
     sh %( git add . )
