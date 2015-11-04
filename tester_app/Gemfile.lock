@@ -1,7 +1,5 @@
-GIT
-  remote: git://github.com/shakacode/react_on_rails.git
-  revision: 9bc3b9a2a1527ecdfe2d51b4a55e5d2a0324b600
-  branch: add-generators
+PATH
+  remote: ../../react_on_rails
   specs:
     react_on_rails (1.0.0.pre)
       connection_pool
