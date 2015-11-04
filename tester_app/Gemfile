@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'react_on_rails', :github => 'shakacode/react_on_rails', :branch => 'add-generators'
+gem 'react_on_rails', path: '../../react_on_rails'
 gem 'therubyracer'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
