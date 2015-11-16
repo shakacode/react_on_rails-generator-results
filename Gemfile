@@ -49,3 +49,8 @@ group :development do
 end
 
 gem 'bootstrap-sass'
+
+# For Heroku deployment
+gem 'rails_12factor', group: :production
+gem 'puma', group: :production
+
