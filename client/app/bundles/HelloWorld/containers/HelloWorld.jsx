@@ -1,33 +1,43 @@
 import React, { PropTypes } from 'react';
 import HelloWorldWidget from '../components/HelloWorldWidget';
-import _ from 'lodash';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import Immutable from 'immutable';
+import * as helloWorldActionCreators from '../actions/helloWorldActionCreators';
+
+function select(state) {
+  // Which part of the Redux global state does our component want to receive as props?
+  // Note the use of `$$` to prefix the property name because the value is of type Immutable.js
+  return { $$helloWorldStore: state.$$helloWorldStore };
+}
 
 // Simple example of a React "smart" component
-export default class HelloWorld extends React.Component {
+class HelloWorld extends React.Component {
   constructor(props, context) {
     super(props, context);
-
-    // Uses lodash to bind all methods to the context of the object instance, otherwise
-    // the methods defined here would not refer to the component's class, not the component
-    // instance itself.
-    _.bindAll(this, '_updateName');
   }
 
   static propTypes = {
-    name: PropTypes.string.isRequired, // this is passed from the Rails view
-  }
+    dispatch: PropTypes.func.isRequired,
 
-  state = {name: this.props.name} // how to set initial state in es2015 class syntax
-
-  _updateName(name) {
-    this.setState({name: name});
+    // This corresponds to the value used in function select above.
+    $$helloWorldStore: PropTypes.instanceOf(Immutable.Map).isRequired,
   }
 
   render() {
+    const { dispatch, $$helloWorldStore } = this.props;
+    const actions = bindActionCreators(helloWorldActionCreators, dispatch);
+
+    // This uses the ES2015 spread operator to pass properties as it is more DRY
+    // This is equivalent to:
+    // <HelloWorldWidget $$helloWorldStore={$$helloWorldStore} actions={actions} />
     return (
-      <div>
-        <HelloWorldWidget name={this.state.name} _updateName={this._updateName} />
-      </div>
+      <HelloWorldWidget {...{$$helloWorldStore, actions}} />
     );
   }
 }
+
+// Don't forget to actually use connect!
+// Note that we don't export HelloWorld, but the redux "connected" version of it.
+// See https://github.com/rackt/react-redux/blob/master/docs/api.md#examples
+export default connect(select)(HelloWorld);
