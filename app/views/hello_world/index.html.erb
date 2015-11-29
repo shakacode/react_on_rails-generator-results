@@ -1,0 +1,6 @@
+<h1 class="alert alert-info this-works">Server Rendering</h1>
+<%= react_component("HelloWorldApp",
+                     @hello_world_props,
+                     generator_function: false,
+                     prerender: true,
+                     trace: true) %>
