@@ -29,6 +29,8 @@ Description:
 
 See the [react_on_rails README.md](https://github.com/shakacode/react_on_rails/blob/master/README.md) for more information.
 
+Note: We support [react-router](https://github.com/rackt/react-router/), even with server rendering, but we have not yet created generator options for that.
+
 # v1.1.1
 
 * [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/121)
