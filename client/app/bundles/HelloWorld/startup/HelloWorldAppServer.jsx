@@ -1,11 +1,11 @@
 import React from 'react';
 import HelloWorld from '../containers/HelloWorld';
 
-const HelloWorldApp = props => {
+const HelloWorldAppServer = props => {
   const reactComponent = (
     <HelloWorld {...props} />
   );
   return reactComponent;
 };
 
-export default HelloWorldApp;
+export default HelloWorldAppServer;
