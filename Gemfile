@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'react_on_rails', path: '../react_on_rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -45,3 +47,4 @@ group :development do
   gem 'spring'
 end
 
+gem 'bootstrap-sass'
