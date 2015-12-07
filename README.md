@@ -32,8 +32,8 @@ See the [react_on_rails README.md](https://github.com/shakacode/react_on_rails/b
 Note: We support [react-router](https://github.com/rackt/react-router/), even with server rendering, but we have not yet created generator options for that.
 
 # Annotated PRs
-These have commentary on why the generator does what it does:
-* [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/123): **LOTS OF TIPS HERE**
+These have commentary on why the generator does what it does
+* [redux v1.1.1](https://github.com/shakacode/react_on_rails-generator-results/pull/123)
 
 # v1.2 (not yet released) Diffs
 * [v1.2 Pull Requests](https://github.com/shakacode/react_on_rails-generator-results/pulls)
