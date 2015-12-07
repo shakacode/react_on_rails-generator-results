@@ -35,11 +35,13 @@ Note: We support [react-router](https://github.com/rackt/react-router/), even wi
 These have commentary on why the generator does what it does:
 * [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/123): **LOTS OF TIPS HERE**
 
+# v1.2 (not yet released) Diffs
+* [v1.2 Pull Requests](https://github.com/shakacode/react_on_rails-generator-results/pulls)
 
 # v1.1.1 Diffs
 * [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/121)
 * [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/122)
-* [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/123): **LOTS OF TIPS HERE**
+* [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/123)
 * [redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/124)
 * [basic-heroku-deployment](https://github.com/shakacode/react_on_rails-generator-results/pull/125)
 * [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/126)
