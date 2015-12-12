@@ -35,13 +35,25 @@ Note: We support [react-router](https://github.com/rackt/react-router/), even wi
 These have commentary on why the generator does what it does
 * [redux v1.1.1](https://github.com/shakacode/react_on_rails-generator-results/pull/123)
 
-# v1.2 (not yet released) Diffs
+# v1.2 Diffs
 * [v1.2 Pull Requests](https://github.com/shakacode/react_on_rails-generator-results/pulls)
+* [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/144)
+* [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/145)
+* [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/146)
+* [redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/147)
+* [basic-heroku-deployment](https://github.com/shakacode/react_on_rails-generator-results/pull/148)
+* [basic-skip-bootstrap](https://github.com/shakacode/react_on_rails-generator-results/pull/149)
+* [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/150)
+* [redux to redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/151)
+* [basic-server-rendering to redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/152)
+*	[basic to redux](https://github.com/shakacode/react_on_rails-generator-results/pull/153)
+* [basic to basic-heroku-deployment](https://github.com/shakacode/react_on_rails-generator-results/pull/154)
+* [basic to basic-skip-bootstrap](https://github.com/shakacode/react_on_rails-generator-results/pull/155)
 
 # v1.1.1 Diffs
 * [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/121)
 * [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/122)
-* [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/123)
+* [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/123): **ANNOTATED**
 * [redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/124)
 * [basic-heroku-deployment](https://github.com/shakacode/react_on_rails-generator-results/pull/125)
 * [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/126)
