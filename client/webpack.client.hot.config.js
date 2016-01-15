@@ -10,12 +10,7 @@ config.entry.app.push(
 
   // Webpack dev server
   'webpack-dev-server/client?http://localhost:4000',
-  'webpack/hot/dev-server',
-
-  // See: https://github.com/shakacode/bootstrap-sass-loader
-  // We're using the bootstrap-sass loader.
-  'bootstrap-sass!./bootstrap-sass.config.js'
-
+  'webpack/hot/dev-server'
 );
 
 config.output = {
