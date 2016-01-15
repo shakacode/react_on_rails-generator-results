@@ -16,6 +16,7 @@ Options:
   -j, [--skip-js-linters], [--no-skip-js-linters]      # Skip installing JavaScript linting files
   -L, [--ruby-linters], [--no-ruby-linters]            # Install ruby linting files, tasks, and configs
   -H, [--heroku-deployment], [--no-heroku-deployment]  # Install files necessary for deploying to Heroku
+  -b, [--skip-bootstrap], [--no-skip-bootstrap]        # Skip installing files for bootstrap support
 
 Runtime options:
   -f, [--force]                    # Overwrite files that already exist
@@ -35,8 +36,24 @@ Note: We support [react-router](https://github.com/rackt/react-router/), even wi
 These have commentary on why the generator does what it does
 * [redux v1.1.1](https://github.com/shakacode/react_on_rails-generator-results/pull/123)
 
+# v2.0 Diffs
+* [v2.0 Pull Requests](https://github.com/shakacode/react_on_rails-generator-results/pulls)
+* [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/187)
+* [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/188)
+* [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/189)
+* [redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/190)
+* [basic-heroku-deployment](https://github.com/shakacode/react_on_rails-generator-results/pull/191)
+* [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/192)
+* [redux to redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/193)
+* [basic-server-rendering to redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/194)
+*	[basic to redux](https://github.com/shakacode/react_on_rails-generator-results/pull/195)
+* [basic to basic-heroku-deployment](https://github.com/shakacode/react_on_rails-generator-results/pull/196)
+
+Not yet done:
+* [basic-skip-bootstrap](https://github.com/shakacode/react_on_rails-generator-results/pull/197)
+* [basic to basic-skip-bootstrap](https://github.com/shakacode/react_on_rails-generator-results/pull/198)
+
 # v1.2 Diffs
-* [v1.2 Pull Requests](https://github.com/shakacode/react_on_rails-generator-results/pulls)
 * [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/144)
 * [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/145)
 * [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/146)
