@@ -32,12 +32,28 @@ See the [react_on_rails README.md](https://github.com/shakacode/react_on_rails/b
 
 Note: We support [react-router](https://github.com/rackt/react-router/), even with server rendering, but we have not yet created generator options for that.
 
+We're discussing what goes into the next round of generators in [React on Rails #245](https://github.com/shakacode/react_on_rails/issues/245)
+
 # Annotated PRs
 These have commentary on why the generator does what it does
 * [redux v1.1.1](https://github.com/shakacode/react_on_rails-generator-results/pull/123)
 
 # v2.0.1 Diffs
-* [v2.0 Pull Requests](https://github.com/shakacode/react_on_rails-generator-results/pulls)
+* [v3.0 Pull Requests](https://github.com/shakacode/react_on_rails-generator-results/pulls)
+* [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/210)
+* [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/211)
+* [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/212)
+* [redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/213)
+* [basic-heroku-deployment](https://github.com/shakacode/react_on_rails-generator-results/pull/214)
+* [basic-skip-bootstrap](https://github.com/shakacode/react_on_rails-generator-results/pull/215)
+* [basic to basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/216)
+* [redux to redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/217)
+* [basic-server-rendering to redux-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/218)
+*	[basic to redux](https://github.com/shakacode/react_on_rails-generator-results/pull/219)
+* [basic to basic-heroku-deployment](https://github.com/shakacode/react_on_rails-generator-results/pull/220)
+* [basic to basic-skip-bootstrap](https://github.com/shakacode/react_on_rails-generator-results/pull/221)
+
+# v2.0.1 Diffs
 * [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/197)
 * [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/198)
 * [redux](https://github.com/shakacode/react_on_rails-generator-results/pull/199)
