@@ -38,7 +38,7 @@ We're discussing what goes into the next round of generators in [React on Rails 
 These have commentary on why the generator does what it does
 * [redux v1.1.1](https://github.com/shakacode/react_on_rails-generator-results/pull/123)
 
-# v2.0.1 Diffs
+# v3.0.3 Diffs
 * [v3.0 Pull Requests](https://github.com/shakacode/react_on_rails-generator-results/pulls)
 * [basic](https://github.com/shakacode/react_on_rails-generator-results/pull/210)
 * [basic-server-rendering](https://github.com/shakacode/react_on_rails-generator-results/pull/211)
