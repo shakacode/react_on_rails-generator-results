@@ -54,7 +54,6 @@
     "loader-utils": "^0.2.12",
     "lodash": "^4.3.0",
     "react": "^0.14.7",
-    "react-bootstrap": "^0.28.3",
     "react-dom": "^0.14.7",
     "react-on-rails": "3.0.3",
     "webpack": "^1.12.13"
@@ -62,8 +61,6 @@
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta8",
     "babel-plugin-react-transform": "^2.0.0",
-    "bootstrap-sass": "^3.3.6",
-    "bootstrap-sass-loader": "^1.0.10",
     "css-loader": "^0.23.1",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^5.0.0",

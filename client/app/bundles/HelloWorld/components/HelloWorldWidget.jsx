@@ -3,7 +3,6 @@
 
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
-import { Input } from 'react-bootstrap';
 
 // Simple example of a React "dumb" component
 export default class HelloWorldWidget extends React.Component {
@@ -38,11 +37,11 @@ export default class HelloWorldWidget extends React.Component {
         </h3>
         <hr/>
         <form className="form-horizontal">
-            <Input
+            <label>
+              Say hello to:
+            </label>
+            <input
               type="text"
-              labelClassName="col-sm-2"
-              wrapperClassName="col-sm-10"
-              label="Say hello to:"
               value={name}
               onChange={this.handleChange}
             />
